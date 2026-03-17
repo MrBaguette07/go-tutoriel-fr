@@ -1,0 +1,10 @@
+{
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "package",
+    "editor.formatOnSave": true,
+    "go.toolsEnvVars": {
+        "GO111MODULE": "on"
+    }
+}
