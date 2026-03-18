@@ -1,10 +1,16 @@
 {
-    "go.formatTool": "goimports",
-    "go.useLanguageServer": true,
-    "go.lintOnSave": "package",
+    "go.formatTool": "gofmt",
+    "go.lintTool": "golint",
     "go.vetOnSave": "package",
+    "go.lintOnSave": "package",
+    "go.buildOnSave": "off",
+    "go.useLanguageServer": true,
     "editor.formatOnSave": true,
-    "go.toolsEnvVars": {
-        "GO111MODULE": "on"
-    }
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "go.docsTool": "godoc",
+    "go.generateTestsFlags": [
+        "-exported"
+    ]
 }
