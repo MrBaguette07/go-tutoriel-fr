@@ -124,4 +124,49 @@ func Exercice3() {
 
 func Exercice4() {
 	// Système de tarification
+	age := 70
+	typeBillet := "simple"
+	estSenior := age >= 65
+	estEnfant := age < 12
+	jour := "weekend"
+	prixBase := 20.0
+	statusAbonnement := "étudiant"
+
+	prixDuBillet := prixBase
+
+	if estEnfant {
+		fmt.Printf("Prix du billet pour enfant: %.2f\n", prixBase*0.5)
+		prixDuBillet = prixBase * 0.5
+	} else if estSenior {
+		fmt.Printf("Prix du billet pour senior: %.2f\n", prixBase*0.7)
+		prixDuBillet = prixBase * 0.7
+	} else {
+		fmt.Printf("Prix du billet pour adulte: %.2f\n", prixBase)
+	}
+
+	if typeBillet == "aller-retour" {
+		prixDuBillet *= 1.8
+		fmt.Printf("Prix du billet aller-retour: %.2f\n", prixDuBillet)
+	} else {
+		fmt.Printf("Prix du billet simple: %.2f\n", prixDuBillet)
+	}
+
+	if jour == "weekend" {
+		prixDuBillet *= 0.9
+		fmt.Printf("Prix du billet avec réduction weekend: %.2f\n", prixDuBillet)
+	} else {
+		fmt.Printf("Prix du billet en semaine: %.2f\n", prixDuBillet)
+	}
+
+	if statusAbonnement == "étudiant" {
+		prixDuBillet *= 0.8
+		fmt.Printf("Prix du billet avec réduction étudiant: %.2f\n", prixDuBillet)
+	}
+
+	fmt.Printf("Prix final du billet: %.2f\n", prixDuBillet)
 }
+
+// Exercice 1: OK
+// Exercice 2: OK
+// Exercice 3: semi-ok
+// Exercice 4: Semi-ok
