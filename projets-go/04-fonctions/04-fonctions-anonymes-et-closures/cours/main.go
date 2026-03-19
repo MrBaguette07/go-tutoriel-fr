@@ -51,6 +51,31 @@ func main() {
 		fmt.Printf("%d ", doubler(n))
 	}
 	fmt.Println()
+
+	fmt.Println("--------------------------------")
+	// Générateur de nombres pairs
+	pairs := creerGenerateurSuite(0, 2)
+	fmt.Print("Nombres pairs: ")
+	for i := 0; i < 5; i++ {
+		fmt.Printf("%d ", pairs())
+	}
+	fmt.Println()
+
+	// Générateur de multiples de 5
+	multiples5 := creerGenerateurSuite(5, 5)
+	fmt.Print("Multiples de 5: ")
+	for i := 0; i < 4; i++ {
+		fmt.Printf("%d ", multiples5())
+	}
+	fmt.Println()
+
+	// Générateur de nombres impairs en partant de 1
+	impairs := creerGenerateurSuite(1, 2)
+	fmt.Print("Nombres impairs: ")
+	for i := 0; i < 6; i++ {
+		fmt.Printf("%d ", impairs())
+	}
+	fmt.Println()
 }
 
 // Fonction qui crée un compteur utilisant une closure pour maintenir l'état entre les appels.
@@ -68,5 +93,14 @@ func creerMultiplicateur(facteur int) func(int) int {
 	// facteur est capturé par la closure
 	return func(nombre int) int {
 		return nombre * facteur
+	}
+}
+
+func creerGenerateurSuite(debut, increment int) func() int {
+	valeur := debut - increment // On commence avant pour que le premier appel donne 'debut'
+
+	return func() int {
+		valeur += increment
+		return valeur
 	}
 }
